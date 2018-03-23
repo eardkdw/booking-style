@@ -1,0 +1,1087 @@
+
+
+/* ------------ GENERAL -----------------------------*/
+
+body {
+  font-size: small;
+  margin: 0;
+  padding: 0;
+  color:            #0B263B;
+  font-family:      "Open Sans","Helvetica Neue",Helvetica,"Nimbus Sans",Arial,sans-serif;;
+  background-color: #e7ebee;
+}
+
+.current {color: #ff0066}                        /* used to highlight the current item */
+.error   {color: #ff0066; font-weight: bold}     /* for error messages */
+.warning {color: #ff0066}                        /* for warning messages */
+.note    {font-style: italic}
+
+div#contents, div.trailer {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2em;
+}
+
+h1 {font-size: x-large; clear: both}
+h2 {font-size: large; clear: both}
+
+img {border: 0}
+
+a:link    {color: #0B263B;    text-decoration: none; font-weight: bold}
+a:visited {color: #0B263B; text-decoration: none; font-weight: bold}
+a:hover   {color: #ff0066;   text-decoration: underline; font-weight: bold} 
+
+tr.even_row td.new {background-color: #ffffff}
+tr.odd_row td.new {background-color: #f2f4f6}
+
+td, th {vertical-align: top}
+
+td form {margin: 0}     /* Prevent IE from displaying margins around forms in tables. */
+
+legend {font-weight: bold; font-size: large;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,"Nimbus Sans",Arial,sans-serif;;
+    color: #0B263B}
+fieldset {margin: 0; padding: 0; border: 0; 
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px}
+fieldset.admin {width: 100%; padding: 0 1.0em 1.0em 1.0em;
+    border: 1px solid #C3CCD3}
+fieldset fieldset {position: relative; clear: left; width: 100%; padding: 0; border: 0; margin: 0}  /* inner fieldsets are invisible */
+fieldset fieldset legend {font-size: 0}        /* for IE: even if there is no legend text, IE allocates space  */
+
+
+
+table.admin_table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-color: #C3CCD3;
+}
+
+.admin_table th, .admin_table td,
+table.dataTable thead th, table.dataTable thead td,
+table.dataTable tbody th, table.dataTable tbody td {
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: left;
+  padding: 0.1em 24px 0.1em 0.6em;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+}
+
+.admin_table th:first-child, .admin_table td:first-child,
+table.dataTable thead th:first-child, table.dataTable thead td:first-child {
+  border-left-width: 1px;
+}
+
+.admin_table td, .admin_table th,
+table.dataTable thead th, table.dataTable thead td {
+  border-color: #C3CCD3;
+}
+
+.admin_table th:first-child,
+table.dataTable thead th:first-child, table.dataTable thead td:first-child {
+  border-left-color: #186f4d}
+
+.admin_table th:last-child {
+  border-right-color: #186f4d}
+
+.admin_table.DTFC_Cloned th:last-child {
+  border-right-color: #C3CCD3}
+
+.admin_table th,
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+  color: #ffffff; 
+  background-color: #186f4d}
+
+.admin_table td.action {
+  text-align: center
+}
+
+.admin_table td.action div {
+  display: inline-block
+}
+
+.admin_table td.action div div {
+  display: table-cell
+}
+
+table.display {
+  width: 100%;
+}
+
+table.display tbody tr:nth-child(2n) {
+  background-color: white;
+}
+
+table.display tbody tr:nth-child(2n+1) {
+  background-color: #E2E4FF;
+}
+
+table.display th, table.display td {
+  height: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+table.display th {
+  padding: 3px 24px 3px 8px;
+}
+
+table.display span {
+  display: none;
+}
+
+table.display span.normal {
+  display: inline;
+}
+
+select.room_area_select {margin-right: 0.5em}
+
+.js .js_none {display: none}
+.js .js_hidden {visibility: hidden}
+
+/* ------------ ADMIN.PHP ---------------------------*/
+form.form_admin {float: left; clear: left; margin: 2em 0 0 0}
+.form_admin fieldset {float: left; width: auto; border: 1px solid #C3CCD3; padding: 1em}
+.form_admin legend {font-size: small}
+.form_admin div {float: left; clear: left} 
+.form_admin label {
+    display: block; float: left; clear: left; 
+    width: 10.0em; min-height: 2.0em; text-align: right;
+}
+.form_admin input {
+    display: block; float: left; clear: right;
+    width: 10.5em;
+    margin-top: -0.2em; margin-left: 1.0em;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,"Nimbus Sans",Arial,sans-serif;; font-size: small;
+}
+.form_admin input.submit {
+    width: auto; margin-top: 1.2em; margin-left: 11.0em
+}
+.admin h2 {clear: left}
+div#area_form, div#room_form {float: left; padding: 0 0 2em 0}
+div#area_form {width: auto}
+div#room_form {width: 100%}
+div#custom_html {float: left; padding: 0 0 3em 1em}
+#area_form form {float: left; margin-right: 1em}
+#area_form label#area_label {display: block; float: left; font-weight: bold; margin-right: 1.0em}
+#roomChangeForm select, #areaChangeForm select {display: block; float: left; margin: -0.1em 1.5em 0 0}
+#roomChangeForm input, #areaChangeForm input {float: left; margin: -0.2em 0.5em 0 0}
+#roomChangeForm input.button, #areaChangeForm input.button {display: block; float: left; margin: 0 0.7em}
+
+div.header_columns, div.body_columns {position: relative; float: left; overflow-x: scroll; overflow-y: hidden}
+div.header_columns {max-width: 20%}
+div.body_columns {max-width: 80%}
+
+.body_columns .admin_table th:first-child {border-left-color: #C3CCD3}
+
+
+/* ------------ DAY/WEEK/MONTH.PHP ------------------*/
+
+div#dwm_header {width: 100%; float: left; margin-top: 1.0em; margin-bottom: 0.5em}
+div#dwm_areas, div#dwm_rooms  {float: left; margin-right: 2.0em}
+#dwm_header h3 {font-size: small; font-weight: normal; text-decoration: underline; 
+    margin-top: 0; margin-bottom: 0.5em; padding-bottom: 0}
+#dwm_header ul {list-style-type: none; padding-left: 0; margin-left: 0; margin-top: 0}
+#dwm_header li {padding-left: 0; margin-left: 0}
+
+div#dwm {margin-bottom: 0.5em}
+#dwm {text-align: center}
+#dwm h2 {margin-bottom: 0}
+#dwm div.timezone {opacity: 0.8}
+
+.date_nav {
+  float: left;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold
+}
+
+.date_nav a {
+  display: block;
+  width: 33%;
+}
+
+.date_before {
+  float: left;
+  text-align: left;
+}
+
+.date_now {
+  float: left;
+  text-align: center;
+}
+
+.date_after {
+  float: right;
+  text-align: right;
+}
+
+.date_before:before {
+  content: '<<\0000a0';
+}
+
+.date_after:after {
+  content: '\0000a0>>';
+}
+
+table.dwm_main {
+  float: left;
+  clear: both; 
+  width: 100%; 
+  border-spacing: 0;
+  border-collapse: separate;
+  border-color: #e7ebee;
+  border-width: 0px;
+  border-style: solid
+}
+
+.dwm_main td {padding: 0;
+    border-top:  1px solid #ffffff;
+    border-left: 1px solid #e7ebee;
+    border-bottom: 0;
+    border-right: 0}
+.dwm_main td:first-child {border-left: 0}
+.dwm_main th {font-size: small; font-weight: normal; vertical-align: top; padding: 0;
+    color: #ffffff; 
+    background-color: #186f4d;
+    border-left: 1px solid #e7ebee}
+.dwm_main th.first_last, .dwm_main th span {padding: 0 2px}
+.dwm_main th:first-child {border-left: 0}
+
+.dwm_main a {
+  display: block;
+  min-height: inherit;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.dwm_main tbody a {padding: 0 2px}
+.dwm_main th a:link    {color: #ffffff;    text-decoration: none; font-weight: normal}
+.dwm_main th a:visited {color: #ffffff; text-decoration: none; font-weight: normal}
+.dwm_main th a:hover   {color: #ffffff;   text-decoration:underline; font-weight: normal}
+
+.dwm_main#week_main th.first_last {vertical-align: bottom}
+.dwm_main td.invalid {background-color: #d1d9de}
+.dwm_main#month_main th {width: 14.3%}
+.dwm_main#month_main td {border-top:  1px solid #e7ebee}
+.dwm_main#month_main td.valid   {background-color: #ffffff}
+.dwm_main#month_main td.invalid {background-color: #d1d9de}
+.dwm_main#month_main a {height: 100%; width: 100%; padding: 0 2px 0 2px}
+
+td.new a, a.new_booking {display: block; font-size: medium; text-align: center}
+td.new img, .new_booking img {margin: auto; padding: 4px 0 2px 0}
+img.repeat_symbol {float: right; padding: 3px}
+.dwm_main#month_main img.repeat_symbol {padding: 2px}
+
+
+div.cell_container {position: relative; float: left; width: 100%;        /* the containing div for a.new_booking */ 
+height: 100px} /* NOTE:  if you change the value of (min-)height, make sure you */
+                                                                         /* also change the value of height in mrbs-ielte6.css */
+.month a.new_booking {position: absolute; top: 0; left: 0; z-index: 10}  /* needs to be above the base, but below the date (monthday) */
+       
+div.cell_header {position: relative; width: 100%; z-index: 20;         /* needs to be above the new booking anchor */
+     min-height: 20%; height: 20%; max-height: 20%; overflow: hidden}
+
+#month_main div.cell_header a {display: block; width: auto; float: left}                                                                               
+#month_main div.cell_header a.monthday {font-size: medium}  /* the date in the top left corner */
+#month_main div.cell_header a.week_number {opacity: 0.5; padding: 2px 4px 0 4px}
+
+div.booking_list {
+  position: relative;      /* contains the list of bookings */
+  z-index: 20;             /* needs to be above new_booking */
+  max-height: 80%;
+  font-size: x-small;                                
+  overflow: auto;
+}
+
+div.description, div.slot {
+  width: 50%;
+}
+
+div.both {
+  width: 100%;
+}
+
+.booking_list div {
+  float: left;
+  min-height: 1.3em;
+  overflow: hidden;
+}
+
+  .booking_list div {
+    height: 1.3em;
+    max-height: 1.3em;
+  }
+  
+
+.booking_list a {
+  font-size: x-small;
+}
+
+
+.A {background-color: #ffff99}
+.B {background-color: #99cccc}
+.C {background-color: #ffffcd}
+.D {background-color: #cde6e6}
+.E {background-color: #6dd9c4}
+.F {background-color: #82adad}
+.G {background-color: #ccffcc}
+.H {background-color: #d9d982}
+.I {background-color: #99cc66}
+.J {background-color: #e6ffe6}
+
+.private_type {
+  background-color: #d1d9de;
+}
+
+/* For floating header in the day and week views */
+
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  display: none;
+}
+
+.dwm_main#month_main th.hidden_day     
+    {width: 0%; 
+     display: none    }
+td.hidden_day     {background-color: #d1d9de; /* hidden columns (eg weekends) in the week and month views */
+    font-size: medium; font-weight: bold;
+    border-top: 1px solid #d1d9de;
+     display: none    }
+tr.row_highlight td.new {background-color: #ffc0da} /* used for highlighting a row */
+.dwm_main td.row_labels     {background-color: #186f4d; white-space: nowrap}    /* used for the row labels column */
+.row_labels a:link    {color: #ffffff;    text-decoration: none; font-weight: normal}
+.row_labels a:visited {color: #ffffff; text-decoration: none; font-weight: normal}
+.row_labels a:hover   {color: #ffffff;   text-decoration: underline; font-weight: normal}
+
+.dwm_main td:hover.new, .dwm_main td.new_hover {background-color: #ffc0da}
+.dwm_main tr:hover td.row_labels, .dwm_main td.row_labels_hover {background-color: #ffc0da; color: #0B263B}
+.dwm_main#month_main td:hover.valid, .dwm_main#month_main td.valid_hover {background-color: #ffc0da}
+
+.dwm_main tbody tr:hover a:link,    td.row_labels_hover a:link    {color: #0B263B}
+.dwm_main tbody tr:hover a:visited, td.row_labels_hover a:visited {color: #0B263B}
+.resizing .dwm_main tr.even_row td:hover.new {background-color: #ffffff}
+.resizing .dwm_main tr.odd_row td:hover.new {background-color: #f2f4f6}
+.resizing .dwm_main tr:hover td.row_labels {background-color: #186f4d; color: #ffffff}
+.resizing .row_labels a:hover {text-decoration: none}
+.resizing .dwm_main tbody tr:hover td.row_labels a:link {color: #ffffff}
+.resizing .dwm_main tbody tr:hover td.row_labels a:visited {color: #ffffff}
+.resizing .dwm_main tr td.row_labels.selected {background-color: #ffc0da}
+.resizing .dwm_main tr:hover td.row_labels.selected,
+.resizing .dwm_main tr td.row_labels.selected a:link,
+.resizing .dwm_main tr td.row_labels.selected a:visited {color: #0B263B}
+
+
+.dwm_main .ui-resizable-handle {z-index: 1000}
+.dwm_main .ui-resizable-n {top: -1px}
+.dwm_main .ui-resizable-e {right: -1px}
+.dwm_main .ui-resizable-s {bottom: -1px}
+.dwm_main .ui-resizable-w {left: -1px}
+.dwm_main .ui-resizable-se {bottom: 0; right: 0}
+.dwm_main .ui-resizable-sw {bottom: -2px; left: -1px}
+.dwm_main .ui-resizable-ne {top: -2px; right: -1px}
+.dwm_main .ui-resizable-nw {top: -2px; left: -1px}
+
+div.outline {
+  position: absolute !important;
+  border: 1px dotted #186f4d;
+  z-index: 700;
+}
+
+div.slots1 {min-height: 17px; max-height: 17px; height: 17px}
+div.slots2 {min-height: 35px; max-height: 35px; height: 35px}
+div.slots3 {min-height: 53px; max-height: 53px; height: 53px}
+div.slots4 {min-height: 71px; max-height: 71px; height: 71px}
+div.slots5 {min-height: 89px; max-height: 89px; height: 89px}
+div.slots6 {min-height: 107px; max-height: 107px; height: 107px}
+div.slots7 {min-height: 125px; max-height: 125px; height: 125px}
+div.slots8 {min-height: 143px; max-height: 143px; height: 143px}
+div.slots9 {min-height: 161px; max-height: 161px; height: 161px}
+div.slots10 {min-height: 179px; max-height: 179px; height: 179px}
+div.slots11 {min-height: 197px; max-height: 197px; height: 197px}
+div.slots12 {min-height: 215px; max-height: 215px; height: 215px}
+div.slots13 {min-height: 233px; max-height: 233px; height: 233px}
+div.slots14 {min-height: 251px; max-height: 251px; height: 251px}
+div.slots15 {min-height: 269px; max-height: 269px; height: 269px}
+div.slots16 {min-height: 287px; max-height: 287px; height: 287px}
+div.slots17 {min-height: 305px; max-height: 305px; height: 305px}
+div.slots18 {min-height: 323px; max-height: 323px; height: 323px}
+div.slots19 {min-height: 341px; max-height: 341px; height: 341px}
+div.slots20 {min-height: 359px; max-height: 359px; height: 359px}
+div.slots21 {min-height: 377px; max-height: 377px; height: 377px}
+div.slots22 {min-height: 395px; max-height: 395px; height: 395px}
+div.slots23 {min-height: 413px; max-height: 413px; height: 413px}
+div.slots24 {min-height: 431px; max-height: 431px; height: 431px}
+div.slots25 {min-height: 449px; max-height: 449px; height: 449px}
+div.slots26 {min-height: 467px; max-height: 467px; height: 467px}
+div.slots27 {min-height: 485px; max-height: 485px; height: 485px}
+div.slots28 {min-height: 503px; max-height: 503px; height: 503px}
+div.slots29 {min-height: 521px; max-height: 521px; height: 521px}
+div.slots30 {min-height: 539px; max-height: 539px; height: 539px}
+div.slots31 {min-height: 557px; max-height: 557px; height: 557px}
+div.slots32 {min-height: 575px; max-height: 575px; height: 575px}
+div.slots33 {min-height: 593px; max-height: 593px; height: 593px}
+div.slots34 {min-height: 611px; max-height: 611px; height: 611px}
+div.slots35 {min-height: 629px; max-height: 629px; height: 629px}
+div.slots36 {min-height: 647px; max-height: 647px; height: 647px}
+div.slots37 {min-height: 665px; max-height: 665px; height: 665px}
+div.slots38 {min-height: 683px; max-height: 683px; height: 683px}
+div.slots39 {min-height: 701px; max-height: 701px; height: 701px}
+div.slots40 {min-height: 719px; max-height: 719px; height: 719px}
+div.slots41 {min-height: 737px; max-height: 737px; height: 737px}
+div.slots42 {min-height: 755px; max-height: 755px; height: 755px}
+div.slots43 {min-height: 773px; max-height: 773px; height: 773px}
+div.slots44 {min-height: 791px; max-height: 791px; height: 791px}
+div.slots45 {min-height: 809px; max-height: 809px; height: 809px}
+div.slots46 {min-height: 827px; max-height: 827px; height: 827px}
+div.slots47 {min-height: 845px; max-height: 845px; height: 845px}
+div.slots48 {min-height: 863px; max-height: 863px; height: 863px}
+div.slots49 {min-height: 881px; max-height: 881px; height: 881px}
+div.slots50 {min-height: 899px; max-height: 899px; height: 899px}
+div.slots51 {min-height: 917px; max-height: 917px; height: 917px}
+div.slots52 {min-height: 935px; max-height: 935px; height: 935px}
+div.slots53 {min-height: 953px; max-height: 953px; height: 953px}
+div.slots54 {min-height: 971px; max-height: 971px; height: 971px}
+div.slots55 {min-height: 989px; max-height: 989px; height: 989px}
+div.slots56 {min-height: 1007px; max-height: 1007px; height: 1007px}
+div.slots57 {min-height: 1025px; max-height: 1025px; height: 1025px}
+div.slots58 {min-height: 1043px; max-height: 1043px; height: 1043px}
+div.slots59 {min-height: 1061px; max-height: 1061px; height: 1061px}
+div.slots60 {min-height: 1079px; max-height: 1079px; height: 1079px}
+div.celldiv {max-width: 100%; overflow: hidden; margin: 0; padding: 0}
+.row_labels div.celldiv {overflow: visible}  /* we want to see the content in the row label columns */
+div.mini, div.maxi {position: relative}     /* establish a relative position for the absolute position to follow */
+div.multiple_control {
+    display: none;       /* will be over-ridden by JavaScript if enabled */
+    position: absolute; z-index: 20;
+    width: 17px;
+    text-align: center;
+    padding: 0;
+    border-right: 1px solid #e7ebee;
+    background-color: #ffff22}
+.mini div.multiple_control {                /* heights for maxi are set using in-line styles */
+    height: 17px;
+    max-height: 17px;
+    min-height: 17px}
+div:hover.multiple_control {cursor: pointer}
+.multiple_booking table {height: 100%; width: 100%; border-spacing: 0; border-collapse: collapse}
+.multiple_booking td {border-left: 0}
+
+/* used for toggling multiple bookings from mini to maxi size */
+.maximized div.mini {display: none}
+.maximized div.maxi {display: block}
+.minimized div.mini {display: block}
+.minimized div.maxi {display: none}
+
+
+.js div.multiple_control {
+    display: block;   /* if JavaScript is enabled then we want to see the JavaScript controls */
+  }
+.js .multiple_booking .maxi a {padding-left: 20px}
+
+div.div_select {
+  position: absolute;
+  border: 0;
+  opacity: 0.2;
+  background-color: #186f4d;
+}
+
+div.div_select.outside {
+  background-color: transparent;
+}   
+
+/* booking privacy status */
+.private {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* booking approval status */
+.awaiting_approval {opacity: 0.6}
+.awaiting_approval a:before {content: "? "}
+
+/* booking confirmation status */
+.tentative {opacity: 0.6}
+.tentative a {font-weight: normal}
+
+
+/* ------------ DEL.PHP -----------------------------*/
+div#del_room_confirm {padding-bottom: 3em}
+#del_room_confirm p {text-align: center; font-size: large; font-weight: bold}
+div#del_room_confirm_links {position: relative; margin-left: auto; margin-right: auto}
+span#del_yes {display:block; position: absolute; right: 50%; margin-right: 1em; font-size: large}
+span#del_no  {display:block; position: absolute; left: 50%; margin-left: 1em; font-size: large}
+#del_room_confirm_links a:hover {cursor: pointer}                  /* for IE */
+#del_room_confirm_links span:hover {text-decoration: underline}    /* for Firefox */
+
+
+/* ------------ EDIT_AREA_ROOM.PHP ------------------*/
+.edit_area_room .form_general fieldset fieldset {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em
+}
+
+.edit_area_room .form_general fieldset fieldset fieldset {
+  margin-bottom: 1em;
+}
+
+.edit_area_room .form_general fieldset fieldset legend {
+  font-size: small;
+  font-style: italic;
+  font-weight: normal
+}
+
+.edit_area_room .form_general fieldset fieldset fieldset legend {
+  padding-left: 2em;
+}
+
+.edit_area_room fieldset#time_settings {padding:0; margin: 0}
+span#private_display_caution {display: block; margin-top: 1em; font-style: italic; font-weight: normal}
+#book_ahead_periods_note span {display: block; float: left; width: 24em; margin: 0 0 1em 1em; font-style: italic}
+.edit_area_room .form_general textarea {height: 6em; width: 25em}
+.edit_area_room div#custom_html {margin-top: 8px}
+
+
+/* ------------ FORM_GENERAL ------------------------*/
+/*                                                   */
+/*   used in EDIT_ENTRY.PHP, REPORT.PHP,             */
+/*   SEARCH.PHP and EDIT_AREA_ROOM.PHP               */
+
+form.form_general {margin-top: 2.0em; width: 100%}
+.edit_entry     form.form_general {min-width: 37.0em}
+.report         form.form_general {min-width: 25.0em}
+.search         form.form_general {min-width: 21.0em}
+.edit_area_room form.form_general {min-width: 30.0em}
+form.form_general#logon       {min-width: 21.0em}
+form.form_general#db_logon    {min-width: 25.0em}
+form#edit_room {float: left; width: auto; margin: 0 2em 1em 1em}
+
+.form_general div {float: left; clear: left; width: 100%}
+.form_general div div {float: none; clear: none; width: auto}
+.form_general div.group {float: left}
+.form_general div.group_container {float: left}
+.form_general .group_container div.group {clear: left}
+.form_general div.group.ampm {width: 16em}
+.edit_area_room div.group {clear: none; width: auto}
+.edit_area_room div.group#private_override div {clear: left}
+.form_general fieldset {width: auto; border: 0; padding-top: 2.0em}
+#edit_room fieldset {width: 100%; float: left; padding: 0; margin: 0}
+#edit_room fieldset.submit_buttons {margin-top: 1em}
+
+.form_general label {
+    display: block; float: left; overflow: hidden;
+    min-height: 1.0em; 
+    width: 20%; 
+    text-align: right; padding-bottom: 0.8em; font-weight: bold;
+}
+
+.edit_entry     .form_general label {
+    width: 10em;
+    max-width: 10em;
+}
+
+.import         .form_general label {max-width: 12em}
+.report         .form_general label {max-width: 12em}
+.search         .form_general label {max-width: 8em}
+.edit_area_room .form_general label {max-width: 30em; width: 17em}
+#logon                    label {max-width: 8em}
+#db_logon                 label {max-width: 12em}
+
+.form_general .group      label {clear: none; width: auto; max-width: none; font-weight: normal; overflow: visible; text-align: left}
+.form_general #rep_type .group label {clear: left}
+div#rep_type {
+    width: auto;
+    border-right: 1px solid #C3CCD3;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    padding-right: 1em;
+}
+fieldset.rep_type_details {clear: none; padding-top: 0}
+fieldset.rep_type_details fieldset {padding-top: 0}
+
+.rep_type_details label {text-align: left}
+
+.form_general input {
+    display: block; float: left; margin-left: 1.0em; 
+    font-family: "Open Sans","Helvetica Neue",Helvetica,"Nimbus Sans",Arial,sans-serif;; font-size: small
+}
+.edit_entry     .form_general input {width: 26em; margin-right: 1em}
+.report         .form_general input {width: 12em}
+.search         .form_general input {width: 12em}
+.edit_area_room .form_general input {width: 12em}
+#logon                    input {width: 12em}
+#db_logon                 input {width: 12em}
+
+.form_general .group input {
+  clear: none;
+  width: auto;
+  margin-right: 0.5em;
+}
+
+.form_general input.date {width: 6em}
+
+/* font family and size needs to be the same for input and textarea as their widths are defined in ems */
+.form_general textarea {
+    display: block; float: left; 
+    width: 26em; height: 11em; 
+    margin-left: 1.0em; margin-bottom: 0.5em;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,"Nimbus Sans",Arial,sans-serif;; font-size: small
+}
+.form_general select {float: left; margin-left: 1.0em; margin-right: -0.5em; margin-bottom: 0.5em}
+.form_general label.radio {font-weight: normal; width: auto}
+.form_general input.radio {
+  margin-top: 0.1em;
+  margin-right: 0.4em;
+  width: auto
+}
+.form_general input.checkbox {width: auto; margin-top: 0.2em}
+.edit_area_room .form_general input.checkbox {margin-left: 1.0em}
+.edit_area_room .form_general #booking_policies input.text {width: 4em}
+.form_general input.submit {display: block; width: auto; float: left; clear: left; margin-top: 1.0em}
+
+div#import_submit     {width: 20%; max-width: 12em}
+div#report_submit     {width: 20%; max-width: 12em}
+div#search_submit     {width: 20%; max-width: 8em}
+div#logon_submit      {width: 20%; max-width: 8em}
+div#db_logon_submit   {width: 20%; max-width: 12em}
+#import_submit input, #report_submit input, #search_submit input, #logon_submit input, #db_logon_submit input
+    {position: relative; left: 100%; width: auto}
+div#edit_area_room_submit_back {float: left; width: 17em; max-width: 30em}
+div#edit_area_room_submit_save {float: left; clear: none; width: auto}
+#edit_area_room_submit_back input {float: right}
+div#edit_entry_submit_back {float: left; width: 20em; max-width: 10em}
+div#edit_entry_submit_save {float: left; clear: none; width: auto}
+#edit_entry_submit_back input {float: right}
+
+
+.form_general .div_dur_mins input{width: 4.0em}
+.form_general .div_time input {width: 2.0em}
+.form_general .div_time input.time_hour {text-align: right}
+.form_general .div_time input.time_minute {text-align: left; margin-left: 0}
+.form_general .div_time span + input {margin-left: 0}
+.form_general .div_time span {display: block; float: left; width: 0.5em; text-align: center}
+.form_general input#duration {width: 2.0em; text-align: right}
+.form_general select#dur_units {margin-right: 1.0em; margin-left: 0.5em}
+.form_general div#ad {float: left}
+.form_general #ad label {clear: none; text-align: left; font-weight: normal}
+.form_general input.all_day, .form_general input#area_def_duration_all_day {width: auto; margin-left: 1em; margin-right: 0.5em}
+.form_general select#start_seconds, input#area_def_duration_mins {margin-right: 2em}
+.form_general #div_rooms select, .form_general #div_typematch select {float: left; margin-right: 2.0em}
+
+fieldset#rep_info, fieldset#booking_controls {
+  border-top: 1px solid #C3CCD3;
+  padding-top: 0.7em;
+}
+
+.form_general input#rep_num_weeks, .form_general input#month_absolute {width: 4em}
+
+.edit_entry span#end_time_error {display: block; float: left; margin-left: 2em; font-weight: normal}
+.edit_area_room span.error {display: block; width: 100%; margin-bottom: 0.5em}
+
+.form_general label.secondary {font-weight: normal; width: auto}
+
+div#conflict_check, div#policy_check {float: left; clear: none; width: 2em; padding: 1em 0.5em; cursor: pointer}
+div#conflict_check {margin-left: 3em}
+div.good {color: green}
+div.bad {color: red}
+
+.form_general table {border-collapse: collapse}
+.form_general table, .form_general tr, .form_general th, .form_general td {padding: 0; margin: 0; border: 0}
+.form_general th {font-weight: normal; font-style: italic; text-align: left; padding: 0.2em 0 0.2em 1em}
+
+
+/* ------------ EDIT_ENTRY_HANDLER.PHP ------------------*/
+.edit_entry_handler div#submit_buttons {float: left}
+.edit_entry_handler #submit_buttons form {float: left; margin: 1em 2em 1em 0}
+
+
+/* ------------ EDIT_USERS.PHP ------------------*/
+div#form_container {width: auto; position: relative; float: left}    /* this is the containing block against which the absolute positioning works */
+#form_container input.submit {width: auto; position: absolute; bottom: 2.0em}  /* bring both buttons up          */
+form#form_edit_users {width: auto; margin-top: 2.0em}
+#form_edit_users fieldset {float: left; width: auto}  
+#form_edit_users div {float: left; clear: left; width: auto}
+#form_edit_users div#edit_users_input_container {padding-bottom: 4.0em}    /* padding-bottom leaves room for the submit buttons. */
+                                                                           /* Apply it to the div because applying it to the     */
+                                                                           /* fieldset does not work in all browsers (eg Safari) */
+#form_edit_users label{
+    display: block; float: left;
+    min-height: 2.0em; 
+    width: 10.0em;  
+    text-align: right;
+}
+#form_edit_users input {
+    display: block; float: left;
+    width: 10.0em; 
+    margin-left: 1.0em; 
+}
+#form_edit_users select, #form_edit_users textarea {
+    margin-left: 1.0em;
+}
+#form_edit_users textarea {margin-bottom: 0.5em}
+
+#form_edit_users p {display: block; float: left; clear: left; padding: 0.5em 0 0.7em 0; margin: 0;
+                    width: 26em}
+#form_edit_users ul {clear: left}
+#form_edit_users input.submit {right: 2.0em}                                   /* and put the OK on the right     */
+#form_delete_users input.submit {left: 2.0em}                                  /* and put the Delete on the left */
+#form_edit_users input.checkbox {width: auto; margin-left: 1.0em}
+form.edit_users_error {width: 10em; margin-top: 2.0em}
+div#user_list {padding: 2em 0}
+form#add_new_user {margin-left: 1em}
+#users_table td {text-align: right}
+#users_table td div.string {text-align: left}
+
+
+
+/* ------------ FUNCTIONS.INC -------------------*/
+
+.banner {
+  height: 100%;
+  width: 100%;
+  background-color: #186f4d;
+  color: #ffffff;
+  border-color: #e7ebee;
+  border-width: 0px;
+  border-style: solid;
+}
+
+.banner.simple, .banner.simple nav {
+  height: auto;
+}
+
+.banner #company {
+  font-size: large;
+  padding: 0.3em 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.banner #company div {
+  width: 100%;
+}
+
+.banner nav {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.banner ul {
+  list-style: none;
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 0;
+}
+
+.banner li {
+  display: table-cell;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  border-color: #e7ebee;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  padding: 0.3em 0.5em;
+}
+
+.banner li:first-child {
+  border-left-width: 0;
+}
+
+#logon_box a {
+  display: block;
+  width: 100%;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.banner a:link, .banner a:visited, .banner a:hover {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.banner a:link {
+  color: #ffffff;
+}
+
+.banner a:visited {
+  color: #ffffff;
+}
+
+.banner a:hover {
+  color: #ffffff;
+}
+
+.banner input.date {
+  width: 6.5em;
+  text-align: center
+}
+
+
+.js .banner #Form1 select {
+  display: none;
+}
+
+.js .banner #Form1 span {
+  display: inline-block;
+  min-width: 7.5em;
+}
+
+.js .banner #Form1 input[type=submit] {
+  visibility: hidden;
+}
+
+table#colour_key {clear: both; float: left; border-spacing: 0; border-collapse: collapse; margin-bottom: 0.5em}
+#colour_key td {width: 7.0em; padding: 2px; font-weight: bold;
+    color: #0B263B;
+    border: 1px solid #ffffff}
+#colour_key td#row_padding {border-right: 0; border-bottom: 0}
+#header_search input {width: 6.0em}
+div#n_outstanding {margin-top: 0.5em}
+.banner .outstanding a {color: #FFF36C}
+
+/* ------------ HELP.PHP ------------------------*/
+table#version_info {border-spacing: 0; border-collapse: collapse}
+#version_info td {padding: 0 1.0em 0 0; vertical-align: bottom}
+#version_info td:first-child {text-align: right}
+
+
+/* ------------ IMPORT.PHP ------------------------*/
+.import .form_general fieldset fieldset legend {font-size: small; font-style: italic; font-weight: normal}
+div.problem_report {border-bottom: 1px solid #C3CCD3; margin-top: 1em}
+
+/* ------------ MINCALS.PHP ---------------------*/
+#cals {float: right}
+div#cal_last {float: left}
+div#cal_this {float: left; margin-left: 1.0em}
+div#cal_next {float: left; margin-left: 1.0em}
+
+table.calendar {border-spacing: 0; border-collapse: collapse}
+.calendar th {min-width: 2.0em; text-align: center; font-weight: normal; background-color: transparent; color: #0B263B}
+.calendar td {text-align: center; font-size: x-small}
+.calendar th.hidden {background-color: #dae0e4} 
+.calendar td.hidden {background-color: #dae0e4; font-weight: bold} 
+.calendar a.current {font-weight: bold; color: #ff0066}
+td#sticky_day {border: 1px dotted #ff0066}
+td.mincals_week_number { opacity: 0.5; font-size: 60%; }
+
+/* ------------ PENDING.PHP ------------------*/
+#pending_list form {
+  display: inline-block;
+}
+
+#pending_list td.table_container, #pending_list td.sub_table {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+#pending_list .control {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  color: #0B263B;
+}
+
+.js #pending_list td.control {
+  background-color: #FFF36C;
+}
+
+#pending_list td:first-child {width: 1.2em}
+#pending_list #pending_table td.sub_table {width: auto}
+table.admin_table.sub {border-right-width: 0}
+table.sub th {background-color: #788D9C}
+.js .admin_table table.sub th:first-child {background-color: #FFF36C;
+    border-left-color: #C3CCD3}
+#pending_list form {margin: 2px 4px}
+
+
+/* ------------ REPORT.PHP ----------------------*/
+div#div_summary {padding-top: 3em}
+#div_summary table {border-spacing: 1px; border-collapse: collapse;
+    border-color: #0B263B; border-style: solid;
+    border-top-width: 1px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 1px}
+#div_summary td, #div_summary th {padding: 0.1em 0.2em 0.1em 0.2em;
+    border-color: #0B263B; border-style: solid;
+    border-top-width: 0; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 0}
+#div_summary th {background-color: transparent; font-weight: bold; text-align: center}
+#div_summary thead tr:nth-child(2) th {font-weight: normal; font-style: italic}
+#div_summary th:first-child {text-align: right}
+#div_summary tfoot th {text-align: right}
+#div_summary td {text-align: right}
+#div_summary tbody td:nth-child(even), #div_summary tfoot th:nth-child(even) {border-right-width: 0}
+#div_summary td:first-child {font-weight: bold}
+p.report_entries {font-weight: bold}
+.report .form_general fieldset fieldset {padding-top: 0.5em; padding-bottom: 0.5em}
+.report .form_general fieldset fieldset legend {font-size: small; font-style: italic; font-weight: normal}
+button#delete_button {float: left; clear: left; margin: 1em 0 3em 0}
+
+
+/* ------------ SEARCH.PHP ----------------------*/
+span#search_str {color: #ff0066}
+p#nothing_found {font-weight: bold}
+div#record_numbers {font-weight: bold}
+div#record_nav {font-weight: bold; margin-bottom: 1.0em}
+
+/* ------------ SITE_FAQ ------------------------*/
+.help q {font-style: italic}
+.help dfn {font-style: normal; font-weight: bold}
+#site_faq_contents li a {text-decoration: underline}
+div#site_faq_body {margin-top: 2.0em}
+#site_faq_body h4 {border-top: 1px solid #C3CCD3; padding-top: 0.5em; margin-top: 0} 
+#site_faq_body div {padding-bottom: 0.5em}
+#site_faq_body :target {background-color: #ffe6f0}
+
+
+/* ------------ TRAILER.INC ---------------------*/
+div#trailer {border-top: 1px solid #0B263B; 
+             border-bottom: 1px solid #0B263B; 
+             float: left;
+             clear: left;
+             margin-top: 1.0em; margin-bottom: 1.5em;
+             padding-top: 0.3em; padding-bottom: 0.3em}
+#trailer div {float: left; width: 100%}
+#trailer div.trailer_label {float: left; clear: left; width: 20%; max-width: 9.0em; font-weight: bold}
+#trailer div.trailer_links {float: left;              width: 79%}  /* 79 to avoid rounding problems */
+.trailer_label span {margin-right: 1.0em}
+
+#trailer span.current {font-weight: bold}
+#trailer span.hidden {font-weight: normal; 
+    background-color: #e7ebee;  /* hack: only necessary for IE6 to prevent blurring with opacity */
+    opacity: 0.5}  /* if you change this value, change it in the IE sheets as well */
+#trailer .current a {color: #ff0066}
+
+div#simple_trailer {clear: both; text-align: center; padding-top: 1.0em; padding-bottom: 2.0em}
+#simple_trailer a {padding: 0 1.0em 0 1.0em}
+
+
+/* ------------ VIEW_ENTRY.PHP ------------------*/
+.view_entry #entry td:first-child {text-align: right; font-weight: bold; padding-right: 1.0em}
+.view_entry div#view_entry_nav {margin-top: 1.0em}
+.view_entry #approve_buttons form {float: left; margin-right: 2em}
+.view_entry #approve_buttons legend {font-size: 0}
+.view_entry div#returl {margin-top: 1em}
+#approve_buttons td {vertical-align: middle; padding-top: 1em}
+#approve_buttons td#caption {text-align: left}
+#approve_buttons td#note {padding-top: 0}
+#approve_buttons td#note form {width: 100%}
+#approve_buttons td#note textarea {width: 100%; height: 6em}
+
+
+/*-------------DataTables-------------------------*/
+
+div.datatable_container {
+  float: left;
+  width: 100%;
+}
+
+div.ColVis_collection {
+  float: left;
+  width: auto;
+}
+
+div.ColVis_collection button.ColVis_Button {
+  float: left;
+  clear: left;
+}
+
+.dataTables_wrapper .dataTables_length {
+  clear: both;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  clear: right;
+  margin-bottom: 1em;
+}
+
+span.ColVis_radio {
+  display: block;
+  float: left;
+  width: 30px;
+}
+
+span.ColVis_title {
+  display: block;
+  float: left;
+  white-space: nowrap;
+}
+
+table.dataTable.display tbody tr.odd {
+  background-color: #E2E4FF;
+}
+
+table.dataTable.display tbody tr.even {
+  background-color: white;
+}
+
+table.dataTable.display tbody tr.odd > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+  background-color: #D3D6FF;
+}
+
+table.dataTable.display tbody tr.odd > .sorting_2,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_2 {
+  background-color: #DADCFF;
+}
+
+table.dataTable.display tbody tr.odd > .sorting_3,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_3 {
+  background-color: #E0E2FF;
+}
+
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_1  {
+  background-color: #EAEBFF;
+}
+
+table.dataTable.display tbody tr.even > .sorting_2,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_2 {
+  background-color: #F2F3FF;
+}
+
+table.dataTable.display tbody tr.even > .sorting_3,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_3 {
+  background-color: #F9F9FF;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom-width: 0;
+}
+
+div.dt-buttons {
+  float: right;
+  margin-bottom: 0.4em;
+}
+
+a.dt-button {
+  margin-right: 0;
+}
+
+
+/* ------------ jQuery UI additions -------------*/
+
+.ui-autocomplete {
+  max-height: 150px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  /* add padding to account for vertical scrollbar */
+  padding-right: 20px;
+}
+
+
+#check_tabs {border:0}
+div#check_tabs {background-image: none}
+.edit_entry #ui-tab-dialog-close {position:absolute; right:0; top:23px}
+.edit_entry #ui-tab-dialog-close a {float:none; padding:0}

@@ -1,0 +1,108 @@
+@import url('open-sans.css');
+body {
+   margin: 0 auto;
+   height: 100vh;
+}
+body.now_next {
+   margin: 0;
+   padding: 0;
+   border: 0;
+  background-color: #186f4d;
+}
+header.banner {
+  height: auto;
+}
+body.now_next div#contents {
+   float: none;
+   width: 100%;
+   margin: 0 auto;
+}
+.banner #company div#logo {
+   padding: 0;
+   max-width: 50%;
+   width: 18em;
+   float: left;
+}
+.banner #company div#logo img {
+   width: 100%;
+}
+.banner #company div#mrbs {
+   width: 50%;
+   float: left;
+}
+.banner div#company {
+   text-align: left;
+   padding-left: 0;
+}
+
+div.roompanel table#day_main thead th {
+   font-size: 180%;
+}
+/* now/next display */
+div.inprogress, div.free {
+  font-size: 360%;
+  text-align: center;
+  vertical-align: middle;
+}   
+div.until {
+  font-size: 150%;
+}
+div.next {
+  background-color: #186f4d;
+  color: white;
+  height: 29vh;
+  width: 100%;
+  text-align: center;
+   border-top: solid 1vh darkgreen;
+}
+div.nownext {
+   height: 85vh;
+   vertical-align: middle;
+   border: solid 1vh darkgreen;
+  background-color: #186f4d;
+   padding: 0;
+   margin: 0 auto;
+}
+div.nownext div#dwm {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 55%;
+  transform: translate(-50%, 0);
+}
+div.nownext div#dwm h1 {
+  font-size: 240%;
+}
+div.now {
+  background-color: #186f4d;
+  color: white;
+  width: auto;
+  height: 55vh;
+  text-align: center;
+  display: flex;
+}
+div.next {
+  display: flex;
+}
+div.current {
+  border: solid 8px red;
+  box-sizing: border-box;
+}
+div.bobble {
+  margin: auto auto;
+  
+}
+div.now div.title, div.next div.title, div.now div.free {
+  font-size: 480%;
+  color: white;
+  font-weight: bold;
+}
+div.free {
+}
+body.now_next nav ul li, body.now_next div#mrbs {
+   display:none;
+}
+body.now_next nav ul li:first-child {
+   display: list-item;
+}
+

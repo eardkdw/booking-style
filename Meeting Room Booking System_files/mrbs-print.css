@@ -1,0 +1,67 @@
+
+.screenonly, .banner, nav {
+  display: none;
+}
+
+td.new a, a.new_booking img { display: none; }
+
+.dwm_main th {color: #0B263B}
+.dwm_main th a:link, .row_labels a:link {color: #0B263B}
+
+table.dwm_main {
+  border-width: 1px;
+  border-color: #879AA8;
+}
+
+.dwm_main th {
+  border-left-color: #879AA8;
+}
+    
+.dwm_main td {
+  border-top-color:  #879AA8;
+  border-left-color: #879AA8;
+}
+
+.dwm_main#month_main td {
+  border-top-color:  #879AA8;
+}
+
+
+
+div.cell_container {
+  min-height: 100px;
+  height: auto;
+}
+
+div.cell_header {
+  min-height: 1.4em;
+  height: 1.4em;
+  max-height: 1.4em;
+}
+
+div.booking_list {
+  overflow: hidden;
+  max-height: none;
+}
+
+div.booking_list div {
+  box-sizing: border-box;
+}
+
+    
+table#colour_key {margin-top: 1em}
+
+td.A, #month_main div.A, #colour_key td.A {border: 2px solid #ffff99}
+td.B, #month_main div.B, #colour_key td.B {border: 2px solid #99cccc}
+td.C, #month_main div.C, #colour_key td.C {border: 2px solid #ffffcd}
+td.D, #month_main div.D, #colour_key td.D {border: 2px solid #cde6e6}
+td.E, #month_main div.E, #colour_key td.E {border: 2px solid #6dd9c4}
+td.F, #month_main div.F, #colour_key td.F {border: 2px solid #82adad}
+td.G, #month_main div.G, #colour_key td.G {border: 2px solid #ccffcc}
+td.H, #month_main div.H, #colour_key td.H {border: 2px solid #d9d982}
+td.I, #month_main div.I, #colour_key td.I {border: 2px solid #99cc66}
+td.J, #month_main div.J, #colour_key td.J {border: 2px solid #e6ffe6}
+
+.ColVis_Button, .dataTables_filter, .dataTables_length, .dataTables_paginate {display: none; }
+
+.ui-resizable-handle {display: none}
